@@ -4,14 +4,14 @@ const mail_sercice_1 = require("./services/mail.sercice");
 (async () => {
     await (0, mail_sercice_1.sendEmail)({
         to: 'info.sadhguruinfotech@gmail.com',
-        subject: '📄 New Quotation Created — Your Company',
+        subject: '📄 New Quotation Created — Lawn Care',
         html: `
     <!doctype html>
     <html lang="en">
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>New Quotation — Your Company</title>
+      <title>New Quotation — Lawn Care</title>
       <style>
         @media only screen and (max-width: 600px) {
           .container { width: 100% !important; padding: 16px !important; }
@@ -36,9 +36,9 @@ const mail_sercice_1 = require("./services/mail.sercice");
                 <td style="padding:18px 24px; background:linear-gradient(90deg,#2E8B57,#145A32); color:#fff;">
                   <table role="presentation" width="100%">
                     <tr>
-                      <td><img src="https://sadhguruinfotech.com/logo.png" alt="Your Company" width="140" style="display:block; border:0;"></td>
+                      <td><img src="https://sadhguruinfotech.com/logo.png" alt="Lawn Care" width="140" style="display:block; border:0;"></td>
                       <td style="text-align:right;">
-                        <strong style="font-size:16px;">Your Company</strong><br/>
+                        <strong style="font-size:16px;">Lawn Care</strong><br/>
                         <span style="font-size:12px; opacity:0.9;">Professional Lawn & Garden Management</span>
                       </td>
                     </tr>
@@ -96,7 +96,7 @@ const mail_sercice_1 = require("./services/mail.sercice");
               <!-- Footer -->
               <tr>
                 <td style="padding:18px 24px; border-top:1px solid #eef1ef;">
-                  <p style="margin:0; font-weight:600;">Your Company Management</p>
+                  <p style="margin:0; font-weight:600;">Lawn Care Management</p>
                   <p style="margin:6px 0; font-size:13px; color:#666;">
                     info.sadhguruinfotech@gmail.com | sadhguruinfotech.com
                   </p>

@@ -54,7 +54,7 @@ const sendEmail = async (options) => {
             throw new Error('Missing SMTP credentials in environment variables');
         }
         const mailOptions = {
-            from: `"Your Company" <${process.env.MAIL_FROM || process.env.SMTP_USER}>`,
+            from: `"Lawn Care" <${process.env.MAIL_FROM || process.env.SMTP_USER}>`,
             to: options.to,
             subject: options.subject,
             text: options.text,

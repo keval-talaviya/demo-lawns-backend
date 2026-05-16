@@ -150,7 +150,7 @@ exports.JobService = {
         // Defensive: if data isn't an array, fall back to empty
         const rows = Array.isArray(data) ? data : [];
         // Extract company settings
-        const companyName = companySettings?.companyName || 'Your Company';
+        const companyName = companySettings?.companyName || 'Lawn Care';
         const gstRate = companySettings?.gstRate || 15;
         const sanitizedData = rows.map((job) => {
             // populated fields may be ObjectId or populated doc — cast to any and read safely
@@ -319,7 +319,7 @@ exports.JobService = {
                 completedByName = user.name;
         }
         // Extract company settings
-        const companyName = companySettings?.companyName || 'Your Company';
+        const companyName = companySettings?.companyName || 'Lawn Care';
         const gstRate = companySettings?.gstRate || 15;
         const gstNumber = companySettings?.gstNumber || '';
         const invoiceItems = job.items.map(item => ({

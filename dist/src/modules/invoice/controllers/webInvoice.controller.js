@@ -321,7 +321,7 @@ exports.WebInvoiceController = {
             }
             // Fetch company settings
             const companySettings = await companySettings_model_1.CompanySettingsModel.findOne().lean();
-            const companyName = companySettings?.companyName || 'Your Company';
+            const companyName = companySettings?.companyName || 'Lawn Care';
             const gstRate = companySettings?.gstRate || 15;
             const gstNumber = companySettings?.gstNumber || '';
             const customer = invoice.customerId ?? {};

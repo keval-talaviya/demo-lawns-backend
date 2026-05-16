@@ -8,7 +8,7 @@ const statementCustomer_template_1 = require("./emailTemplates/statementCustomer
 const config_1 = require("../config");
 const sendStatementEmail = async (customer, transactions, openingBalance, closingBalance, fromDate, toDate) => {
     const companySettings = await companySettings_model_1.CompanySettingsModel.findOne().lean();
-    const companyName = companySettings?.companyName || 'Your Company';
+    const companyName = companySettings?.companyName || 'Lawn Care';
     const logoPath = companySettings?.companyLogo;
     const companyLogo = logoPath
         ? (logoPath.startsWith('http') ? logoPath : `${config_1.config.apiUrl}${logoPath.startsWith('/') ? '' : '/'}${logoPath}`)

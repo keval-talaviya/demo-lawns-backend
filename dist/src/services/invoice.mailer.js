@@ -17,7 +17,7 @@ const companySettings_model_1 = require("../modules/companySettings/model/compan
 const sendInvoiceEmails = async (invoiceData, franchiseData) => {
     // Fetch company settings for dynamic logo and name
     const companySettings = await companySettings_model_1.CompanySettingsModel.findOne().lean();
-    const dbCompanyName = companySettings?.companyName || 'Your Company';
+    const dbCompanyName = companySettings?.companyName || 'Lawn Care';
     const logoPath = companySettings?.companyLogo;
     const dbCompanyLogo = logoPath
         ? (logoPath.startsWith('http') ? logoPath : `${config_1.config.apiUrl}${logoPath.startsWith('/') ? '' : '/'}${logoPath}`)
@@ -43,7 +43,7 @@ const sendInvoiceEmails = async (invoiceData, franchiseData) => {
             // Generate PDF
             const pdfBuffer = await invoicePdf_service_1.InvoicePdfService.generateInvoicePDF(invoice);
             const customerHtml = (0, invoiceCustomer_template_1.invoiceCustomerTemplate)(invoiceData);
-            const companyName = invoiceData.companyName || 'Your Company';
+            const companyName = invoiceData.companyName || 'Lawn Care';
             tasks.push((0, mail_sercice_1.sendEmail)({
                 to: franchiseData.customerEmail,
                 subject: `${companyName} - ${invoiceData.customerName} - Invoice #${invoiceData.invoiceNumber}`,
@@ -64,7 +64,7 @@ const sendInvoiceEmails = async (invoiceData, franchiseData) => {
             console.error('Failed to generate invoice PDF:', pdfError);
             // Send email without PDF if generation fails
             const customerHtml = (0, invoiceCustomer_template_1.invoiceCustomerTemplate)(invoiceData);
-            const companyName = invoiceData.companyName || 'Your Company';
+            const companyName = invoiceData.companyName || 'Lawn Care';
             tasks.push((0, mail_sercice_1.sendEmail)({
                 to: franchiseData.customerEmail,
                 subject: `${companyName} - ${invoiceData.customerName} - Invoice #${invoiceData.invoiceNumber}`,
