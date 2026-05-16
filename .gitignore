@@ -1,0 +1,63 @@
+# Node modules
+node_modules/
+package-lock.json/  
+
+# Environment files
+.env
+.env.*
+
+# Build outputs
+# dist/
+build/
+out/
+tmp/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Miscellaneous
+.cache/
+.history/
+*.local
+*.pid
+*.seed
+*.pid.lock
+
+# Docker
+docker-compose.override.yml
+Dockerfile*
+.dockerignore
+
+# Test outputs
+jest-html-reporters-*.html
+test-results.xml
+
+# Postman collections / exports (if not needed in repo)
+postman/
+
+# Optional: remove compiled JS if using TypeScript src/
+src/**/*.js
+src/**/*.js.map

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .email-header {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #3a5a3a;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #3a5a3a;
+        }
+        .email-body {
+            padding: 30px 20px;
+        }
+        .submission-info {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3a5a3a;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .info-row {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .info-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #3a5a3a;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .info-value {
+            color: #333333;
+            font-size: 15px;
+        }
+        .message-box {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+        .email-footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666666;
+        }
+        .timestamp {
+            color: #888888;
+            font-size: 13px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .action-button {
+            display: inline-block;
+            background-color: #3a5a3a;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            {{header_branding}}
+            <h2 style="margin: 15px 0 0; color: #3a5a3a; font-size: 20px;">New Customer Inquiry</h2>
+        </div>
+
+        <!-- Body -->
+        <div class="email-body">
+            <p>You have received a new message from your website contact form.</p>
+
+            <div class="submission-info">
+                <div class="info-row">
+                    <span class="info-label">Name:</span>
+                    <span class="info-value">{{customer_name}}</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Email Address:</span>
+                    <span class="info-value"><a href="mailto:{{customer_email}}" style="color: #3a5a3a;">{{customer_email}}</a></span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Phone Number:</span>
+                    <span class="info-value"><a href="tel:{{customer_phone}}" style="color: #3a5a3a;">{{customer_phone}}</a></span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Service Interested In:</span>
+                    <span class="info-value">{{service_selected}}</span>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Message / Additional Details:</span>
+                    <div class="message-box">{{customer_message}}</div>
+                </div>
+            </div>
+
+            <div class="timestamp">
+                Submitted on: {{submission_date}} at {{submission_time}}
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="email-footer">
+            <p>This is an automated notification from your website contact form.</p>
+            <p>&copy; {{current_year}} {{company_name}}. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

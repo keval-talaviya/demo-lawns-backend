@@ -1,0 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.JOB_MESSAGES = void 0;
+exports.JOB_MESSAGES = {
+    CREATED: 'Job created successfully.',
+    UPDATED: 'Job updated successfully.',
+    DELETED: 'Job deleted successfully.',
+    LISTED: 'Job list retrieved successfully.',
+    DETAILS_FETCHED: 'Job details fetched successfully.',
+    COMPLETED: 'Job marked as completed successfully.',
+    CANCELLED: 'Job cancelled successfully.',
+    MARKED_OVERDUE: 'Jobs marked as overdue successfully.',
+    NOT_FOUND: 'Job not found.',
+    FAILED_CREATE: 'Failed to create job.',
+    FAILED_UPDATE: 'Failed to update job.',
+    FAILED_DELETE: 'Failed to delete job.',
+    FAILED_FETCH: 'Failed to fetch job data.',
+};
+//# sourceMappingURL=message.js.map

@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const quotation_controller_1 = require("../controllers/quotation.controller");
+const authMiddleware_1 = require("../../../middlewares/authMiddleware");
+const franchiseFilter_1 = require("../../../middlewares/franchiseFilter");
+const validatorMiddleware_1 = require("../../../middlewares/validatorMiddleware");
+const quotation_validator_1 = require("../validators/quotation.validator");
+const rateLimiter_1 = require("../../../common/rateLimiter");
+const router = (0, express_1.Router)();
+router.use(authMiddleware_1.authenticate);
+router.use(franchiseFilter_1.addFranchiseFilter);
+router.use((0, rateLimiter_1.getModuleRateLimiter)('quotation'));
+router.post('/', (0, validatorMiddleware_1.validatorMiddleware)(quotation_validator_1.createQuotationSchema), quotation_controller_1.QuotationController.create);
+router.post('/send', quotation_controller_1.QuotationController.send);
+router.post('/list', quotation_controller_1.QuotationController.list);
+router.get('/pdf', quotation_controller_1.QuotationController.downloadPDF);
+router.get('/:id', quotation_controller_1.QuotationController.getById);
+router.post('/:id', (0, validatorMiddleware_1.validatorMiddleware)(quotation_validator_1.updateQuotationSchema), quotation_controller_1.QuotationController.update);
+router.delete('/:id', quotation_controller_1.QuotationController.remove);
+exports.default = router;
+//# sourceMappingURL=quotation.route.js.map

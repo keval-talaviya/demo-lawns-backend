@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const customer_controller_1 = require("../controllers/customer.controller");
+const authMiddleware_1 = require("../../../middlewares/authMiddleware");
+const franchiseFilter_1 = require("../../../middlewares/franchiseFilter");
+const validatorMiddleware_1 = require("../../../middlewares/validatorMiddleware");
+const customer_validator_1 = require("../validators/customer.validator");
+const rateLimiter_1 = require("../../../common/rateLimiter");
+const router = (0, express_1.Router)();
+router.use(authMiddleware_1.authenticate);
+router.use(franchiseFilter_1.addFranchiseFilter);
+router.use((0, rateLimiter_1.getModuleRateLimiter)('customer'));
+router.post('/', (0, validatorMiddleware_1.validatorMiddleware)(customer_validator_1.createCustomerSchema), customer_controller_1.CustomerController.create);
+router.post('/list', customer_controller_1.CustomerController.list);
+router.post('/transactionsCreate', (0, validatorMiddleware_1.validatorMiddleware)(customer_validator_1.createTransactionSchema), customer_controller_1.CustomerController.createTransaction);
+router.get('/list-all', customer_controller_1.CustomerController.listAll);
+router.get('/invoices', customer_controller_1.CustomerController.getInvoices);
+router.get('/wallet', customer_controller_1.CustomerController.getWallet);
+router.get('/:id', customer_controller_1.CustomerController.getById);
+router.post('/:id', (0, validatorMiddleware_1.validatorMiddleware)(customer_validator_1.updateCustomerSchema), customer_controller_1.CustomerController.update);
+router.post('/statement/email', customer_controller_1.CustomerController.sendStatement);
+router.delete('/:id', customer_controller_1.CustomerController.remove);
+exports.default = router;
+//# sourceMappingURL=customer.route.js.map
