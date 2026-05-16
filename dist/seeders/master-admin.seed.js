@@ -4,8 +4,8 @@ exports.run = void 0;
 const user_model_1 = require("../src/modules/user/model/user.model");
 const constants_1 = require("../src/common/constants");
 const logger_1 = require("../src/common/logger");
-const MASTER_ADMIN_EMAIL = 'admin@ablawns.com';
-const MASTER_ADMIN_PASSWORD = 'Admin@ablawns123';
+const MASTER_ADMIN_EMAIL = 'info.sadhguruinfotech@gmail.com';
+const MASTER_ADMIN_PASSWORD = 'Admin@demo123';
 const MASTER_ADMIN_NAME = 'Master Admin';
 const run = async () => {
     try {

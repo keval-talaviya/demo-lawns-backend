@@ -69,7 +69,7 @@ const quotationCustomerTemplate = (data) => {
                     <tr>
                         <td align="center" style="background-color: #f4f4f4; padding: 20px 30px; color: #777777; font-size: 13px;">
                             <p style="margin: 0 0 10px 0;">
-                                <strong>${companyName}</strong><br>                                Website: <a href="https://ablawns.co.nz" style="color: #16a34a; text-decoration: none;">ablawns.co.nz</a>
+                                <strong>${companyName}</strong><br>                                Website: <a href="https://sadhguruinfotech.com" style="color: #16a34a; text-decoration: none;">sadhguruinfotech.com</a>
                             </p>
                             <p style="margin: 15px 0 0 0; font-size: 12px; color: #777777;">
                                 © 2025 ${companyName}. All rights reserved.

@@ -34,7 +34,7 @@ class InvoicePdfService {
                 const accentColor = '#2E7D32';
                 // Header - TAX INVOICE title only
                 doc.fontSize(20).fillColor(primaryColor).text('TAX INVOICE', 50, 50);
-                const companyName = companySettings?.companyName || 'AB Lawns & Garden Care';
+                const companyName = companySettings?.companyName || 'Your Company';
                 const gstNumber = companySettings?.gstNumber || '';
                 // Logo
                 let logoBottomY = 50;

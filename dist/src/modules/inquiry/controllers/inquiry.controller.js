@@ -77,7 +77,7 @@ const sendInquiry = async (req, res) => {
         const serviceLabel = common_1.SERVICE_LIST.find(s => s.id === service)?.label || service;
         // Fetch company settings for branding
         const companySettings = await Promise.resolve().then(() => __importStar(require('../../companySettings/model/companySettings.model'))).then(m => m.CompanySettingsModel.findOne().lean());
-        const companyName = companySettings?.companyName || 'AB Lawns & Garden Care';
+        const companyName = companySettings?.companyName || 'Your Company';
         const logoPath = companySettings?.companyLogo;
         const companyLogo = logoPath
             ? (logoPath.startsWith('http') ? logoPath : `${config_1.config.apiUrl}${logoPath.startsWith('/') ? '' : '/'}${logoPath}`)

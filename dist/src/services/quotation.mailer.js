@@ -14,7 +14,7 @@ const sendQuotationEmails = async (quotation) => {
         companySettings_model_1.CompanySettingsModel.findOne().lean(),
         quotation.franchiseId ? user_model_1.UserModel.findById(quotation.franchiseId).lean() : null,
     ]);
-    const companyName = companySettings?.companyName || 'AB Lawns & Garden Care';
+    const companyName = companySettings?.companyName || 'Your Company';
     const logoPath = companySettings?.companyLogo;
     const companyLogo = logoPath
         ? (logoPath.startsWith('http') ? logoPath : `${config_1.config.apiUrl}${logoPath.startsWith('/') ? '' : '/'}${logoPath}`)

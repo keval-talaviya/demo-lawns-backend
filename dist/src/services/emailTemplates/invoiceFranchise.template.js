@@ -9,7 +9,7 @@ const invoiceFranchiseTemplate = (data) => {
     const customerName = data.customerName || 'Customer';
     const customerEmail = data.customerEmail || '—';
     const invoiceNumber = data.invoiceNumber || 'N/A';
-    const companyName = data.companyName || 'AB Lawns & Garden Care';
+    const companyName = data.companyName || 'Your Company';
     const companyLogo = data.companyLogo;
     const invoiceDate = data.issuedDate
         ? new Date(data.issuedDate).toLocaleDateString('en-US', {

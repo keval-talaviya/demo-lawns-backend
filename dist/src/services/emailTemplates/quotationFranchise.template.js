@@ -57,7 +57,7 @@ const quotationFranchiseTemplate = (q) => {
         </tr>
       </table>
 
-      <p style="margin-top: 20px;">Regards,<br/><b>AB Lawns & Garden Care</b></p>
+      <p style="margin-top: 20px;">Regards,<br/><b>Your Company</b></p>
     </div>
   `;
 };
