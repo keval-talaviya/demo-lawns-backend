@@ -37,6 +37,9 @@ app.get('/', (_req, res) => {
     res.render('index', { title: 'Express TypeScript Starter' });
     console.log('DEBUG: GET / hit in app.ts het out');
 });
+app.get('/health', (_req, res) => {
+    res.status(200).json({ status: 'ok' });
+});
 app.use('/api', routes_1.default);
 app.use(errorHandler_1.errorHandler);
 exports.default = app;
