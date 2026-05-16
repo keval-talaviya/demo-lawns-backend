@@ -345,7 +345,7 @@ export const WebInvoiceController = {
 
       // Fetch company settings
       const companySettings = await CompanySettingsModel.findOne().lean();
-      const companyName = (companySettings as any)?.companyName || 'Your Company';
+      const companyName = (companySettings as any)?.companyName || 'Lawn Care';
       const gstRate = (companySettings as any)?.gstRate || 15;
       const gstNumber = (companySettings as any)?.gstNumber || '';
 

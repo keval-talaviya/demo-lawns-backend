@@ -19,7 +19,7 @@ export const sendInvoiceEmails = async (
 ) => {
     // Fetch company settings for dynamic logo and name
     const companySettings = await CompanySettingsModel.findOne().lean();
-    const dbCompanyName = (companySettings as any)?.companyName || 'Your Company';
+    const dbCompanyName = (companySettings as any)?.companyName || 'Lawn Care';
     const logoPath = (companySettings as any)?.companyLogo;
     const dbCompanyLogo = logoPath
         ? (logoPath.startsWith('http') ? logoPath : `${config.apiUrl}${logoPath.startsWith('/') ? '' : '/'}${logoPath}`)
@@ -52,7 +52,7 @@ export const sendInvoiceEmails = async (
             const pdfBuffer = await InvoicePdfService.generateInvoicePDF(invoice as any);
 
             const customerHtml = invoiceCustomerTemplate(invoiceData);
-            const companyName = invoiceData.companyName || 'Your Company';
+            const companyName = invoiceData.companyName || 'Lawn Care';
 
             tasks.push(
                 sendEmail({
@@ -75,7 +75,7 @@ export const sendInvoiceEmails = async (
             console.error('Failed to generate invoice PDF:', pdfError);
             // Send email without PDF if generation fails
             const customerHtml = invoiceCustomerTemplate(invoiceData);
-            const companyName = invoiceData.companyName || 'Your Company';
+            const companyName = invoiceData.companyName || 'Lawn Care';
             tasks.push(
                 sendEmail({
                     to: franchiseData.customerEmail,

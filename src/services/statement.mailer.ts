@@ -14,7 +14,7 @@ export const sendStatementEmail = async (
     toDate: Date
 ) => {
     const companySettings = await CompanySettingsModel.findOne().lean();
-    const companyName = (companySettings as any)?.companyName || 'Your Company';
+    const companyName = (companySettings as any)?.companyName || 'Lawn Care';
     const logoPath = (companySettings as any)?.companyLogo;
     const companyLogo = logoPath
         ? (logoPath.startsWith('http') ? logoPath : `${config.apiUrl}${logoPath.startsWith('/') ? '' : '/'}${logoPath}`)

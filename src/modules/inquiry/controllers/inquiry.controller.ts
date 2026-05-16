@@ -46,7 +46,7 @@ export const sendInquiry = async (req: Request, res: Response) => {
 
     // Fetch company settings for branding
     const companySettings = await import('../../companySettings/model/companySettings.model').then(m => m.CompanySettingsModel.findOne().lean());
-    const companyName = (companySettings as any)?.companyName || 'Your Company';
+    const companyName = (companySettings as any)?.companyName || 'Lawn Care';
     const logoPath = (companySettings as any)?.companyLogo;
     const companyLogo = logoPath
       ? (logoPath.startsWith('http') ? logoPath : `${config.apiUrl}${logoPath.startsWith('/') ? '' : '/'}${logoPath}`)

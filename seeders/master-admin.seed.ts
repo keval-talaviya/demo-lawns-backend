@@ -4,8 +4,8 @@ import { ROLES, MODULES, PERMISSIONS } from '../src/common/constants';
 import bcrypt from 'bcrypt';
 import { logger } from '../src/common/logger';
 
-const MASTER_ADMIN_EMAIL = 'info.sadhguruinfotech@gmail.com';
-const MASTER_ADMIN_PASSWORD = 'Admin@demo123';
+const MASTER_ADMIN_EMAIL = 'admin@ablawns.com';
+const MASTER_ADMIN_PASSWORD =  'Admin@ablawns123';
 const MASTER_ADMIN_NAME = 'Master Admin';
 
 export const run = async () => {

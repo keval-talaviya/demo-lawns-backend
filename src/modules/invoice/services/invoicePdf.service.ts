@@ -35,7 +35,7 @@ export class InvoicePdfService {
         // Header - TAX INVOICE title only
         doc.fontSize(20).fillColor(primaryColor).text('TAX INVOICE', 50, 50);
 
-        const companyName = (companySettings as any)?.companyName || 'Your Company';
+        const companyName = (companySettings as any)?.companyName || 'Lawn Care';
         const gstNumber = (companySettings as any)?.gstNumber || '';
 
         // Logo

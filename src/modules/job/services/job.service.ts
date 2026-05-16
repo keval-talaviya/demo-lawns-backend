@@ -135,7 +135,7 @@ export const JobService = {
     const rows: any[] = Array.isArray(data) ? data : [];
 
     // Extract company settings
-    const companyName = (companySettings as any)?.companyName || 'Your Company';
+    const companyName = (companySettings as any)?.companyName || 'Lawn Care';
     const gstRate = (companySettings as any)?.gstRate || 15;
 
     const sanitizedData = rows.map((job: any) => {
@@ -331,7 +331,7 @@ export const JobService = {
     }
 
     // Extract company settings
-    const companyName = (companySettings as any)?.companyName || 'Your Company';
+    const companyName = (companySettings as any)?.companyName || 'Lawn Care';
     const gstRate = (companySettings as any)?.gstRate || 15;
     const gstNumber = (companySettings as any)?.gstNumber || '';
 
